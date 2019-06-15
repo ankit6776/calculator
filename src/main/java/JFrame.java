@@ -17,6 +17,10 @@ public class JFrame extends javax.swing.JFrame {
     private static float num1=0;
     private static float num2=0;
     private static float res=0;
+    private static String numA="";
+    private static String numB="";
+    boolean flag=false;
+    
     public JFrame() {
         initComponents();
     }
@@ -256,24 +260,32 @@ public class JFrame extends javax.swing.JFrame {
     private void bt8ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
         String str=txtval.getText()+bt8.getText();
+        if(flag==false) numA=str;
+        else numB=numB+bt8.getText();
          txtval.setText(str);
     }                                   
 
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
        String str=txtval.getText()+bt1.getText();
+       if(flag==false) numA=str;
+        else numB=numB+bt1.getText();
          txtval.setText(str);
     }                                   
 
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
         String str=txtval.getText()+bt2.getText();
+        if(flag==false) numA=str;
+        else numB=numB+bt2.getText();
          txtval.setText(str);
     }                                   
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
         String str=txtval.getText()+bt3.getText();
+        if(flag==false) numA=str;
+        else numB=numB+bt3.getText();
          txtval.setText(str);
     }                                   
 
@@ -281,37 +293,48 @@ public class JFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         action=btplus.getText();
         num1=Float.valueOf(txtval.getText());
-        txtval.setText("");
+        flag=true;
+         String str=txtval.getText()+btplus.getText();
+         txtval.setText(str);
     }                                      
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
          String str=txtval.getText()+bt4.getText();
+         if(flag==false) numA=str;
+        else numB=numB+bt4.getText();
          txtval.setText(str);
     }                                   
 
     private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
          String str=txtval.getText()+bt5.getText();
+         if(flag==false) numA=str;
+        else numB=numB+bt5.getText();
          txtval.setText(str);
     }                                   
 
     private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
          String str=txtval.getText()+bt6.getText();
+         if(flag==false) numA=str;
+         else numB=numB+bt6.getText();
          txtval.setText(str);
     }                                   
 
     private void btminusActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         action=btminus.getText();
+        flag=true;
         num1=Float.valueOf(txtval.getText());
-        txtval.setText("");
+        txtval.setText(txtval.getText()+"-");
     }                                       
 
     private void bt7ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
          String str=txtval.getText()+bt7.getText();
+         if(flag==false) numA=str;
+        else numB=numB+bt7.getText();
          txtval.setText(str);
     }                                   
 
@@ -325,18 +348,21 @@ public class JFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         action=btmul.getText();
         num1=Float.valueOf(txtval.getText());
-        txtval.setText("");
+        flag=true;
+        txtval.setText(txtval.getText()+"*");
     }                                     
 
     private void bt0ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
           String str=txtval.getText()+bt0.getText();
+          if(flag==false) numA=str;
+        else numB=numB+bt0.getText();
          txtval.setText(str);
     }                                   
 
     private void bteqActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
-        num2=Float.valueOf(txtval.getText());
+        num2=Float.valueOf(numB);
         if("+".equals(action))
             res=num1+num2;
         if("-".equals(action))
@@ -352,7 +378,8 @@ public class JFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         action=btdiv.getText();
         num1=Float.valueOf(txtval.getText());
-        txtval.setText("");
+        flag=true;
+         txtval.setText(txtval.getText()+"*");
     }                                     
 
     private void btpointActionPerformed(java.awt.event.ActionEvent evt) {                                        
