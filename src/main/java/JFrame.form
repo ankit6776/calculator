@@ -28,6 +28,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
                       <Component id="lblMSG" min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="radio" min="-2" pref="87" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
@@ -35,18 +37,6 @@
                           <Component id="txtval" min="-2" pref="230" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="bt0" min="-2" pref="42" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bteq" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bt7" min="-2" pref="42" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="bt8" min="-2" pref="42" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="bt9" min="-2" pref="42" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="bt4" min="-2" pref="42" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -61,6 +51,25 @@
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="bt3" min="-2" pref="42" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="bt7" min="-2" pref="42" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bt8" min="-2" pref="42" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="bt0" min="-2" pref="42" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btpoint" min="-2" pref="42" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="bteq" max="32767" attributes="0"/>
+                                          <Component id="bt9" pref="42" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -73,7 +82,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace pref="65" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,7 +90,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="lblMSG" min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMSG" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="radio" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtval" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -114,8 +126,9 @@
                   <Component id="bteq" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="btdiv" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="bt0" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="btpoint" alignment="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -247,6 +260,23 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b align=&quot;center&quot;&gt;   Calculator &lt;/b&gt;&#xa;&#xa;&#xa;&lt;/html&gt;"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btpoint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="."/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btpointActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="radio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="on/off"/>
+      </Properties>
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="radioStateChanged"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
