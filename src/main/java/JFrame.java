@@ -52,6 +52,7 @@ public class JFrame extends javax.swing.JFrame {
         bt8 = new javax.swing.JButton();
         lblMSG = new javax.swing.JLabel();
         btpoint = new javax.swing.JButton();
+        radio = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +170,18 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
+        radio.setText("on/off");
+        radio.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                radioStateChanged(evt);
+            }
+        });
+        radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,7 +190,9 @@ public class JFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(lblMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,13 +231,15 @@ public class JFrame extends javax.swing.JFrame {
                                     .addComponent(btminus, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btmul, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(lblMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtval, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -259,109 +276,138 @@ public class JFrame extends javax.swing.JFrame {
 
     private void bt8ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
         String str=txtval.getText()+bt8.getText();
         if(flag==false) numA=str;
         else numB=numB+bt8.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
        String str=txtval.getText()+bt1.getText();
        if(flag==false) numA=str;
         else numB=numB+bt1.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
         String str=txtval.getText()+bt2.getText();
         if(flag==false) numA=str;
         else numB=numB+bt2.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
         String str=txtval.getText()+bt3.getText();
         if(flag==false) numA=str;
         else numB=numB+bt3.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void btplusActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
+        if(radio.isSelected()){
         action=btplus.getText();
         num1=Float.valueOf(txtval.getText());
         flag=true;
          String str=txtval.getText()+btplus.getText();
          txtval.setText(str);
+        }
     }                                      
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
          String str=txtval.getText()+bt4.getText();
          if(flag==false) numA=str;
         else numB=numB+bt4.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
          String str=txtval.getText()+bt5.getText();
          if(flag==false) numA=str;
         else numB=numB+bt5.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
          String str=txtval.getText()+bt6.getText();
          if(flag==false) numA=str;
          else numB=numB+bt6.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void btminusActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
+        if(radio.isSelected()){
         action=btminus.getText();
         flag=true;
         num1=Float.valueOf(txtval.getText());
         txtval.setText(txtval.getText()+"-");
+        }
     }                                       
 
     private void bt7ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
          String str=txtval.getText()+bt7.getText();
          if(flag==false) numA=str;
         else numB=numB+bt7.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bt9ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
          String str=txtval.getText()+bt9.getText();
+         if(flag==false) numA=str;
+         else numB=numB+bt9.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void btmulActionPerformed(java.awt.event.ActionEvent evt) {                                      
         // TODO add your handling code here:
+        if(radio.isSelected()){
         action=btmul.getText();
         num1=Float.valueOf(txtval.getText());
         flag=true;
         txtval.setText(txtval.getText()+"*");
+        }
     }                                     
 
     private void bt0ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
+        if(radio.isSelected()){
           String str=txtval.getText()+bt0.getText();
           if(flag==false) numA=str;
         else numB=numB+bt0.getText();
          txtval.setText(str);
+        }
     }                                   
 
     private void bteqActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
+        if(radio.isSelected()){
         num2=Float.valueOf(numB);
         if("+".equals(action))
             res=num1+num2;
@@ -372,21 +418,36 @@ public class JFrame extends javax.swing.JFrame {
         if("/".equals(action))
             res=num1/num2;
         txtval.setText(String.valueOf(res));
+        }
     }                                    
 
     private void btdivActionPerformed(java.awt.event.ActionEvent evt) {                                      
         // TODO add your handling code here:
+        if(radio.isSelected()){
         action=btdiv.getText();
         num1=Float.valueOf(txtval.getText());
         flag=true;
          txtval.setText(txtval.getText()+"*");
+        }
     }                                     
 
     private void btpointActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
+        if(radio.isSelected()){
        String str=txtval.getText()+btpoint.getText();
          txtval.setText(str);
+        }
     }                                       
+
+    private void radioStateChanged(javax.swing.event.ChangeEvent evt) {                                   
+        // TODO add your handling code here:
+    }                                  
+
+    private void radioActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+        if(!radio.isSelected())
+            txtval.setText("");
+    }                                     
 
     /**
      * @param args the command line arguments
@@ -441,6 +502,7 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JButton btplus;
     private javax.swing.JButton btpoint;
     private javax.swing.JLabel lblMSG;
+    private javax.swing.JRadioButton radio;
     private javax.swing.JTextField txtval;
     // End of variables declaration                   
 }
